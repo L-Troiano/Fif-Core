@@ -5,7 +5,7 @@ package fif_core;
 
 /**This class provides implementation and methods of an attribute for one metadata.
  * @author Troiano Lorenzo
- * @version 1.1
+ * @version 1.0
  */
 
 public class Attribute {

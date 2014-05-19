@@ -88,6 +88,8 @@ public class Descriptor {
 	
 	public Metadata getMetadata(Attribute a){
 		
+		assert a!=null : "Descriptor: null attribute";
+		
 		return associations.get(a);
 	}
 	

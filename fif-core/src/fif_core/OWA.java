@@ -1,6 +1,8 @@
 package fif_core;
 
 
+import java.util.Arrays;
+
 import fif_core.exceptions.IllegalNumerOfValuesException;
 import fif_core.interfaces.Aggregator;
 
@@ -13,6 +15,7 @@ import fif_core.interfaces.Aggregator;
 public class OWA implements Aggregator {
 
 	private double[] weights;
+	private final double threshold = 1e-14; /* soglia */
 	
 	/**The constructor sets an array of weights, used in aggregation algorithm.<br><br>
 	 *
@@ -33,6 +36,8 @@ public class OWA implements Aggregator {
 		assert weights!=null : "OWA: Null array";
 		assert weights.length!=0 : "OWA: Empty array";
 		assert isValidArray(weights): "OWA: Illegal weights in array"; /* verifica che i valori sono in [0,1] */
+        assert Math.abs(Filters.sum(weights)-1)<threshold : "OWA: The sum of weights must be 1";        
+        
 		
 		this.weights=weights.clone();
 		
@@ -60,7 +65,7 @@ public class OWA implements Aggregator {
 		 	assert values!=null : "OWA: null array";
 		 	//assert values.length == weights.length : "OWA: Illegal number of values";
 	        assert isValidArray(values): "OWA: Illegal values in array"; /* verifica che i valori siano in [0,1] */
-	        
+
 	        if(values.length != weights.length){
 	        	
 	        	throw new IllegalNumerOfValuesException();
@@ -70,6 +75,8 @@ public class OWA implements Aggregator {
 
 			double sum=0;
 			double product=0;
+			
+			Arrays.sort(values);
 			
 			for(int i=0;i<values.length;i++){
 				

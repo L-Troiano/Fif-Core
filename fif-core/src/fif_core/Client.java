@@ -3,6 +3,7 @@ package fif_core;
 import java.net.URI;
 
 import fif_core.exceptions.DescriptorWithNoValidMetadataException;
+import fif_core.exceptions.IllegalNumerOfValuesException;
 import fif_core.exceptions.InterpretationNotEqualException;
 import fif_core.exceptions.MetadataWithSameAttributeException;
 import fif_core.interfaces.Aggregator;
@@ -75,6 +76,7 @@ public class Client {
 			Metadata metadata5_risorsa1=new Metadata(attribute5,fs5_risorsa1,OpenVeristicInterpretation.getinstance());
 			
 			Descriptor descrittoreRisorsa1=new Descriptor();
+			
 			
 			descrittoreRisorsa1.setMetadata(metadata_risorsa1, metadata2_risorsa1,metadata3_risorsa1,metadata4_risorsa1,metadata5_risorsa1);
 			
@@ -170,6 +172,8 @@ public class Client {
 			DescriptionBasedFilter filtro4_utente1=new DescriptionBasedFilter(metadata4_utente1);
 			DescriptionBasedFilter filtro5_utente1=new DescriptionBasedFilter(metadata5_utente1);
 			
+			
+			
 			Aggregator owa=new OWA(0.2,0.2,0.2,0.2,0.2);
 			
 			ParallelFilter filtro_parallelo_utente1=new ParallelFilter(owa, filtro_utente1,filtro2_utente1,filtro3_utente1,filtro4_utente1,filtro5_utente1);
@@ -247,6 +251,7 @@ public class Client {
 			
 			
 			
+			
 			ParallelFilter filtro_parallelo_utente2=new ParallelFilter(owa2, filtro_utente2,filtro2_utente2,filtro3_utente2);
 			
 			System.out.println(filtro_parallelo_utente2.doFilter(risorsa1));
@@ -287,6 +292,12 @@ public class Client {
 			System.out.println(filtro_utente3.doFilter(risorsa1));
 			
 			
+			SequenceFilter sequence_filter=new SequenceFilter(filtro_utente2,filtro2_utente2,filtro3_utente2);
+			
+
+			System.out.println(sequence_filter.doFilter(risorsa1));
+			
+			
 		} catch (Exception e) {
 			
 			if(e instanceof InterpretationNotEqualException){	
@@ -298,6 +309,10 @@ public class Client {
 			
 			if(e instanceof DescriptorWithNoValidMetadataException){
 				System.out.println("Nel descrittore della risorsa non è stato trovato alcun metadato con lo stesso attributo dei metadati del filtro.");
+			}
+			
+			if(e instanceof IllegalNumerOfValuesException){
+				System.out.println("Si sta cercando di aggregare un numero di valori diverso da quelli dei pesi.");
 			}
 			
 			

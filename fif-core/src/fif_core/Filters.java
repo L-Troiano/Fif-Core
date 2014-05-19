@@ -73,7 +73,7 @@ public class Filters {
 	 * You can set a variable number of values or directly an array of values.<br><br>
 	 * 
 	 * Preconditions: <br><br>
-	 * 1-The input value can't be null.<br>
+	 * 1-The array can't be null.<br>
 	 * 
 	 * Postconditions:<br><br>
 	 * 1-It's returned the maximum value of the list of values.<br><br>
@@ -101,7 +101,7 @@ public class Filters {
 	 * You can set a variable number of values or directly an array of values.<br><br>
 	 * 
 	 * Preconditions: <br><br>
-	 * 1-The input value can't be null.<br>
+	 * 1-The array can't be null.<br>
 	 * 
 	 * Postconditions:<br><br>
 	 * 1-It's returned the minimum value of the list of values.<br><br>

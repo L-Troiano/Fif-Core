@@ -179,10 +179,10 @@ public class PossibilisticInterpretationTester extends TestCase {
 		
 		fs2.setValue("clooney", 0.4);
 		fs2.setValue("stallone", 0.35);
-		fs2.setValue("cruise", 0.43);
+		fs2.setValue("cruise", 0.50);
 		fs2.setValue("hanks", 0.34);
 		
-		assertTrue(f1.doFilter(r)==0.43);
+		assertTrue(f1.doFilter(r)==0.50);
 	}
 	
 	
@@ -210,11 +210,11 @@ public class PossibilisticInterpretationTester extends TestCase {
 		
 		fs2.setValue("clooney", 0.4);
 		fs2.setValue("stallone", 0.35);
-		fs2.setValue("cruise", 0.43);
+		fs2.setValue("cruise", 0.67);
 		fs2.setValue("hanks", 0.2);
 		
 		
-		assertTrue(f1.doFilter(r)==0.43);
+		assertTrue(f1.doFilter(r)==0.58);
 	}
 	
 	
@@ -222,7 +222,7 @@ public class PossibilisticInterpretationTester extends TestCase {
 	@Test
 	public void test6() throws Exception {
 		
-		//concidenza degli insiemi con gli stessi valori
+		//Esistenza di almeno un elemento in comune ad entrambi gli insiemi con valore di appartenenza 1.
 		
 		for(String s: fs1.getSupport()){
 

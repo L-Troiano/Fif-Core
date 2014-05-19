@@ -20,7 +20,7 @@ import fif_core.ResourceRegister;
 public class ClosedVeristicInterpretationTester extends TestCase {
 
 
-	private final double threshold = 1e-38; /* soglia */
+	private final double threshold = 1e-14; /* soglia */
 
 	Attribute att1;
 	FuzzySet fs1 = new FuzzySet();
@@ -102,6 +102,7 @@ public class ClosedVeristicInterpretationTester extends TestCase {
 		double expected = 0.7/1.72;
 		
 		
+		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
 	}
 
@@ -132,6 +133,7 @@ public class ClosedVeristicInterpretationTester extends TestCase {
 
 		
 		double expected = 1.33 / 3.43;
+		
 		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
 	}
@@ -165,6 +167,8 @@ public class ClosedVeristicInterpretationTester extends TestCase {
 
 		double expected = 1.47 / 3.94;
 		
+		
+		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
 	}
 
@@ -194,6 +198,8 @@ public class ClosedVeristicInterpretationTester extends TestCase {
 		fs2.setValue("hanks", 0.2);
 
 		double expected = 1.33 / 2.53;
+		
+
 		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
 	}

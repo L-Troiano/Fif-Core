@@ -91,6 +91,7 @@ public class OpenVeristicInterpretationTester extends TestCase {
 		
 		
 		assertTrue(f1.doFilter(r)==0.0);
+		
 	}
 	
 	
@@ -123,6 +124,8 @@ public class OpenVeristicInterpretationTester extends TestCase {
 		double expected = 0.7/1.47;
 		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
+		
+		
 	}
 	
 	@Test
@@ -159,6 +162,7 @@ public class OpenVeristicInterpretationTester extends TestCase {
 		
 		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
+		
 	}
 	
 
@@ -194,7 +198,7 @@ public class OpenVeristicInterpretationTester extends TestCase {
 		
 		double expected = 1.47/3.89;
 		
-		System.out.println(Math.abs(f1.doFilter(r)-expected));
+		
 		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
 	}
@@ -217,7 +221,7 @@ public class OpenVeristicInterpretationTester extends TestCase {
 		
 		
 		fs1.setValue("clooney", 0.8);
-		fs1.setValue("stallone", 0.30);			
+		fs1.setValue("stallone", 0.30);
 		fs1.setValue("cruise", 0.58);
 		fs1.setValue("hanks", 0.8);			
 		
@@ -229,6 +233,7 @@ public class OpenVeristicInterpretationTester extends TestCase {
 		
 		
 		double expected = 1.33/2.48;
+			
 		
 		assertTrue(Math.abs(f1.doFilter(r)-expected) < threshold);
 	}
@@ -237,7 +242,7 @@ public class OpenVeristicInterpretationTester extends TestCase {
 	@Test
 	public void test6() throws Exception {
 		
-		//concidenza degli insiemi con gli stessi valori
+		//coincidenza degli insiemi con gli stessi valori
 		
 		for(String s: fs1.getSupport()){
 

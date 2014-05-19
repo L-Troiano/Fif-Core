@@ -21,7 +21,7 @@ public abstract class Filter {
 		return doFilter(r,1);
 	}
 	
-	/**This is an abstract method implemented from different tipes of filters.
+	/**This is an abstract method implemented for filtering from different tipes of filters.
 	 *
 	 * 
 	 * @param r The resource you want to filter.

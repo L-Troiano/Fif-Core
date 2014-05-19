@@ -177,6 +177,23 @@ public class ParallelFilter extends Filter {
 		
 	}
 	
+	/**
+	 * This method allows to get the aggregator of this filter.<br><br>
+	 * 
+	 * Postconditions:<br><br>
+	 * 1-The aggregator is returned correctly.<br><br>
+	 * 
+	 * @return the aggregator of this parallel filter.
+	 */
+	
+	public Aggregator getAggregator()  {
+				
+			
+			return aggregator;
+		
+		
+	}
+	
 	
 	private boolean areFiltersNotNull(Filter[] list) {
 		
@@ -186,6 +203,7 @@ public class ParallelFilter extends Filter {
 			
 						
 			isValid=isValid && list[i]!=null;	
+			if (!isValid) break;
 		}
 					
 		

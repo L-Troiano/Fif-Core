@@ -10,4 +10,6 @@ public interface  Aggregator {
 	
 	public double aggregate(double... values) throws IllegalNumerOfValuesException ;
 
+	public double[] getWeights();
+
 }

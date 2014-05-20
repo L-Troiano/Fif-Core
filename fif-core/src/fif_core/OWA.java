@@ -89,6 +89,12 @@ public class OWA implements Aggregator {
 		return sum;
 	}
 
+		@Override
+		public double[] getWeights() {
+			
+			return weights;
+		}
+	 
 
 	private boolean isValidArray(double[] values) {
 	
@@ -110,5 +116,7 @@ public class OWA implements Aggregator {
 		}
 		return isValid;
 	}
+
+
 
 }
